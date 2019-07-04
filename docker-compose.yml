@@ -4,7 +4,7 @@ services:
     build:
       context: ./web
       dockerfile: Dockerfile
-    image: asatrya/wordpress:5.1.1
+    image: asatrya/expressjs-web:5.1.1
     restart: always
     networks:
       - internal
@@ -13,9 +13,6 @@ services:
       - 443:443
     env_file:
       - .env
-    volumes:
-      # - ./web/wp-content:/var/www/html/wp-content
-      - vol_content_uploads:/var/www/html/wp-content/uploads
     depends_on:
       - db
 
@@ -37,5 +34,4 @@ networks:
     driver: bridge
 
 volumes:
-  vol_content_uploads:
   vol_mysql_data:
