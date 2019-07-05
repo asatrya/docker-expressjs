@@ -4,13 +4,12 @@ services:
     build:
       context: ./web
       dockerfile: Dockerfile
-    image: asatrya/expressjs-web:5.1.1
+    image: asatrya/expressjs-web:1.0
     restart: always
     networks:
       - internal
     ports:
-      - 80:80
-      - 443:443
+      - 3000:3000
     env_file:
       - .env
     depends_on:
