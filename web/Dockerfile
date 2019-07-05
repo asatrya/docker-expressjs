@@ -32,10 +32,10 @@ RUN a2enconf ssl-params
 RUN apache2ctl configtest
 
 # Create app folder
-WORKDIR /var/www/html
+WORKDIR /app
 COPY . .
-# RUN chmod -R 775 wp-content/uploads
-# RUN chown -R www-data:www-data wp-content/uploads
+RUN chmod -R 775 uploads
+RUN chown -R www-data:www-data uploads
 
 # Expose port
 EXPOSE 80 443

@@ -15,6 +15,8 @@ services:
       - .env
     depends_on:
       - db
+    volumes:
+      - vol_uploads:/app/uploads
 
   db:
     build: ./mysql
@@ -35,3 +37,4 @@ networks:
 
 volumes:
   vol_mysql_data:
+  vol_uploads:
