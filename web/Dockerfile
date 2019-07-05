@@ -32,10 +32,11 @@ RUN a2enconf ssl-params
 RUN apache2ctl configtest
 
 # Create app folder
+RUN mkdir /app
+RUN chmod -R 775 /app
+RUN chown -R www-data:www-data /app
 WORKDIR /app
 COPY . .
-RUN chmod -R 775 uploads
-RUN chown -R www-data:www-data uploads
 
 # Expose port
 EXPOSE 80 443
